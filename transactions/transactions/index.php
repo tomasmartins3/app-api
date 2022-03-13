@@ -11,7 +11,7 @@ if( isset($_GET['id']) ) {
     $id = $_GET['id'];
 }
 
-$Post = new Element;
+$Transaction = new Element('transactions_data');
 
 switch ($method) {
     
@@ -22,7 +22,7 @@ switch ($method) {
 
     $postData = $data -> postData;
 
-    $r = $Post->update($postData);
+    $r = $Transaction->update($postData);
 
     echo json_encode( $r ); 
     break;
