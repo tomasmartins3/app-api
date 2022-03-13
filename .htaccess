@@ -15,7 +15,7 @@ php_value error_log /home/u617199672/domains/vales.tech/public_html/PHP_errors.l
 
 # DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:vales.tech
 RewriteEngine On
-RewriteCond %{HTTPS} off
+RewriteCond %{HTTPS} on
 RewriteCond %{HTTP_HOST} vales.tech
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:vales.tech
