@@ -21,7 +21,7 @@ switch ($method) {
 
     $postData = $data -> postData;
 
-    $r = $Transaction->update($postData);
+    $r = $Transaction->insert($postData);
 
     echo json_encode( $r ); 
     break;
