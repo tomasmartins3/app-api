@@ -23,7 +23,7 @@ switch ($method) {
 
     // $r = $Transaction->insert($transactionData);
 
-    echo json_encode( $data ); 
+    echo json_encode( 'ok' ); 
     break;
 
 /*   case 'PUT':
