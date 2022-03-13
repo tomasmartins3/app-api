@@ -19,9 +19,9 @@ switch ($method) {
 
     $data = json_decode($data);
 
-    $postData = $data -> postData;
+    $transactionData = $data -> data;
 
-    $r = $Transaction->insert($postData);
+    $r = $Transaction->insert($transactionData);
 
     echo json_encode( $data ); 
     break;
