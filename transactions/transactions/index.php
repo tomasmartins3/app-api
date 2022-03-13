@@ -1,6 +1,5 @@
 <?php 
 require( '../../inc/init.php' );
-require( './functions.php' );
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -28,11 +27,15 @@ switch ($method) {
     break;
 
 /*   case 'PUT':
-    $data = json_decode(file_get_contents('php://input'), true);
+    $data = file_get_contents('php://input');
 
-    $amount = $data['amount'];
-    $r['ok'] = update_balance($id, $amount); 
-    echo json_encode($r); 
+    $data = json_decode($data);
+
+    $postData = $data -> postData;
+
+    $r = $Transaction->update($postData);
+
+    echo json_encode( $r ); 
     break;
 */   
   case 'GET':

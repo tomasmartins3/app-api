@@ -1,12 +1,37 @@
 <?php
-
-
 class Element {
 
     private $table;
 
     public function __construct($table) {
         $this->table = $table;
+    }
+
+    public function insert( $data ) {
+        global $app_db;
+
+        $array = (array) $data;
+        $columns =  [];
+        $values =  [];
+
+        foreach($array as $x => $y) {
+
+            if (gettype($y)!= 'array' && gettype($y)!= 'object') {
+
+                array_push($columns, $x);
+                array_push($values, "$y");
+                
+            }
+        }
+
+        $columns = substr( implode($columns), 0, -1 );
+        $values =  substr( implode($values), 0, -1 );
+
+        $query = "INSERT INTO $this->table
+	        ( $values ) VALUES ( $values )";
+        
+        $result = $app_db->query( $query );
+        return $data;
     }
 
     public function update( $data ) {  
