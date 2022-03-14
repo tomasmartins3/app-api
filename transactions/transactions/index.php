@@ -40,29 +40,13 @@ switch ($method) {
      
     if( isset($id) ) {
       $p = $Post-> get($id);
-
-      $statusId = $p['status'];
-      $p['status'] = get_status($statusId)['name'];
-
-      $authorId = $p['author'];
-      $p['author'] = json_decode(json_encode(get_author($authorId)), true);
-
     } else {
       $p = $Post-> getAll();
 
-      for ($i=0; $i < count($p); $i++) { 
-
-        $statusId = $p[$i]['status'];
-        $p[$i]['status'] = get_status($statusId)['name'];
-
-        $authorId = $p[$i]['author'];
-        $p[$i]['author'] = json_decode(json_encode(get_author($authorId)), true);
-
-      }
+      
     }
 
-    $r['posts'] = $p;
-    $r['allData'] = $p;
+    $r['data'] = $p;
     $r['total'] = isset($id) ? 1 : count($p);
     echo json_encode($r);
     break;
