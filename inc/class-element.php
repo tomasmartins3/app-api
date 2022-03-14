@@ -24,8 +24,8 @@ class Element {
             }
         }
 
-        $columns = substr( implode($columns), 0, -1 );
-        $values =  substr( implode($values), 0, -1 );
+        $columns = substr( implode(',', $columns), 0, -1 );
+        $values =  substr( implode(',', $values), 0, -1 );
 
         /* $query = "INSERT INTO $this->table
 	        ( $values ) VALUES ( $values )";
