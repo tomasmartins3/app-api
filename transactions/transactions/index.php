@@ -17,13 +17,11 @@ switch ($method) {
   case 'POST':
     $data = file_get_contents('php://input');
 
-    $data = json_decode($data);
+    $transactionData = json_decode($data);
 
-    // $transactionData = $data -> data;
+    $r = $Transaction->insert($transactionData);
 
-    // $r = $Transaction->insert($transactionData);
-
-    echo json_encode( $data ); 
+    echo json_encode( $r ); 
     break;
 
 /*   case 'PUT':
