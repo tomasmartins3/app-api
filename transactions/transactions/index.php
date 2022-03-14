@@ -31,7 +31,7 @@ switch ($method) {
 
     $r = $Transaction->update($transactionData);
 
-    echo json_encode( $transactionData ); 
+    echo json_encode( $r ); 
     break;
 
   case 'GET':

@@ -47,14 +47,13 @@ class Element {
 
                 if($x != 'id') {
 
-                    array_push($a, "$x = '$y',");
+                    array_push($a, "$x = '$y'");
 
                 }
             }
         }
 
-        $a = implode($a);
-        $a = substr($a, 0, -1);
+        $a = implode(",", $a);
 
         $id = intval( $data -> id );
         $query = "UPDATE $this->table
@@ -62,7 +61,7 @@ class Element {
         WHERE Id =  $id";
         
         $result = $app_db->query( $query );
-        return $result;
+        return $a;
 
     }
 
