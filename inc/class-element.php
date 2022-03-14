@@ -19,7 +19,7 @@ class Element {
             if (gettype($y)!= 'array' && gettype($y)!= 'object') {
 
                 array_push($columns, $x);
-                array_push($values, "$y");
+                array_push($values, "'" . $y . "'");
                 
             }
         }
