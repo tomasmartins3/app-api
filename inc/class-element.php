@@ -27,12 +27,12 @@ class Element {
         $columns = implode(',', $columns);
         $values =  implode(',', $values);
 
-        /* $query = "INSERT INTO $this->table
-	        ( $values ) VALUES ( $values )";
+        $query = "INSERT INTO $this->table
+	        ( $columns ) VALUES ( $values )";
         
-        $result = $app_db->query( $query ); */
+        $result = $app_db->query( $query );
 
-        return $values;
+        return $result;
     }
 
     public function update( $data ) {  
