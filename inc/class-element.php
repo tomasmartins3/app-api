@@ -38,10 +38,10 @@ class Element {
     public function update( $data ) {  
         global $app_db;
 
-        $array = (array) $data;
+        // $array = (array) $data;
         $a =  [];
 
-        foreach($array as $x => $y) {
+        foreach($data as $x => $y) {
 
             if (gettype($y)!= 'array' && gettype($y)!= 'object') {
 
