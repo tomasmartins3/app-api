@@ -32,7 +32,7 @@ class Element {
         
         $result = $app_db->query( $query ); */
 
-        return $data;
+        return $columns;
     }
 
     public function update( $data ) {  
