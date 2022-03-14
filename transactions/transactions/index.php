@@ -39,9 +39,9 @@ switch ($method) {
   case 'GET':
      
     if( isset($id) ) {
-      $p = $Post-> get($id);
+      $p = $Transaction-> get($id);
     } else {
-      $p = $Post-> getAll();
+      $p = $Transaction-> getAll();
 
       
     }
