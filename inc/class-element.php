@@ -61,7 +61,7 @@ class Element {
         WHERE Id =  $id";
         
         $result = $app_db->query( $query );
-        return $id;
+        return $result;
 
     }
 
